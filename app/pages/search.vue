@@ -541,7 +541,48 @@ function focusElement(el: HTMLElement) {
   el.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
 }
 
+// Find latest package name
+function findLatestPackageName() {
+  const packageName = displayResults.value?.[0]?.package.name
+  if (packageName === query.value) {
+    return packageName.split('/')
+  }
+}
+
+// Navigate to package page
+const navigateToPackage = debounce((packageName?: string[]) => {
+  router.push({
+    name: 'package',
+    params: { package: packageName },
+  })
+}, 500)
+
 function handleResultsKeydown(e: KeyboardEvent) {
+  // If the active element is an input and there are results, navigate to the first result
+  if (e.key === 'Enter' && document.activeElement?.tagName === 'INPUT') {
+    // After entering quickly and pressing Enter, find the latest packages
+    const latestPackageName = findLatestPackageName()
+    // Find successful . navigate to package page
+    if (latestPackageName) return navigateToPackage(latestPackageName)
+    // Waiting for the latest search results (maximum 1.5 seconds)
+    let waitSearchResultInterval: ReturnType<typeof setInterval> | null
+    function clearSearchResultInterval() {
+      if (waitSearchResultInterval) clearInterval(waitSearchResultInterval)
+      waitSearchResultInterval = null
+    }
+    waitSearchResultInterval = setInterval(() => {
+      const latestPackageName = findLatestPackageName()
+      if (latestPackageName) {
+        clearSearchResultInterval()
+        return navigateToPackage(latestPackageName)
+      }
+    }, 100)
+
+    setTimeout(() => {
+      clearSearchResultInterval()
+    }, 1500)
+  }
+
   if (totalSelectableCount.value <= 0) return
 
   const elements = getFocusableElements()
