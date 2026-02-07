@@ -5,6 +5,7 @@ import type {
   Packument,
   VulnerabilityTreeResult,
 } from '#shared/types'
+import type { PackageLikes } from '#shared/types/social'
 import { encodePackageName } from '#shared/utils/npm'
 import type { PackageAnalysisResponse } from './usePackageAnalysis'
 import { isBinaryOnlyPackage } from '#shared/utils/binary-detection'
@@ -28,6 +29,8 @@ export const NoDependencyDisplay = {
 export interface PackageComparisonData {
   package: ComparisonPackage
   downloads?: number
+  /** Total likes from atproto */
+  totalLikes?: number
   /** Package's own unpacked size (from dist.unpackedSize) */
   packageSize?: number
   /** Number of direct dependencies */
@@ -127,7 +130,7 @@ export function usePackageComparison(packageNames: MaybeRefOrGetter<string[]>) {
             if (!latestVersion) return null
 
             // Fetch fast additional data in parallel (optional - failures are ok)
-            const [downloads, analysis, vulns] = await Promise.all([
+            const [downloads, analysis, vulns, likes] = await Promise.all([
               $fetch<{ downloads: number }>(
                 `https://api.npmjs.org/downloads/point/last-week/${encodePackageName(name)}`,
               ).catch(() => null),
@@ -137,8 +140,8 @@ export function usePackageComparison(packageNames: MaybeRefOrGetter<string[]>) {
               $fetch<VulnerabilityTreeResult>(
                 `/api/registry/vulnerabilities/${encodePackageName(name)}`,
               ).catch(() => null),
+              $fetch<PackageLikes>(`/api/social/likes/${name}`).catch(() => null),
             ])
-
             const versionData = pkgData.versions[latestVersion]
             const packageSize = versionData?.dist?.unpackedSize
 
@@ -188,6 +191,7 @@ export function usePackageComparison(packageNames: MaybeRefOrGetter<string[]>) {
                 deprecated: versionData?.deprecated,
               },
               isBinaryOnly: isBinary,
+              totalLikes: likes?.totalLikes,
             }
           } catch {
             return null
@@ -299,6 +303,7 @@ function createNoDependencyData(): PackageComparisonData {
     },
     isNoDependency: true,
     downloads: undefined,
+    totalLikes: undefined,
     packageSize: 0,
     directDeps: 0,
     installSize: {
@@ -350,6 +355,14 @@ function computeFacetValue(
       return {
         raw: data.downloads,
         display: formatCompactNumber(data.downloads),
+        status: 'neutral',
+      }
+    }
+    case 'totalLikes': {
+      if (data.totalLikes === undefined) return null
+      return {
+        raw: data.totalLikes,
+        display: formatCompactNumber(data.totalLikes),
         status: 'neutral',
       }
     }
