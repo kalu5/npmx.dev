@@ -6,6 +6,7 @@ const props = withDefaults(
     variant?: 'primary' | 'secondary'
     size?: 'small' | 'medium'
     ariaKeyshortcuts?: string
+    block?: boolean
 
     classicon?: string
   }>(),
@@ -27,8 +28,10 @@ defineExpose({
 <template>
   <button
     ref="el"
-    class="group cursor-pointer inline-flex gap-x-1 items-center justify-center font-mono border border-border rounded-md transition-all duration-200 disabled:(opacity-40 cursor-not-allowed border-transparent)"
+    class="group cursor-pointer gap-x-1 items-center justify-center font-mono border border-border rounded-md transition-all duration-200 disabled:(opacity-40 cursor-not-allowed border-transparent)"
     :class="{
+      'inline-flex': !block,
+      'flex': block,
       'text-sm px-4 py-2': size === 'medium',
       'text-xs px-2 py-0.5': size === 'small',
       'bg-transparent text-fg hover:enabled:(bg-fg/10) focus-visible:enabled:(bg-fg/10) aria-pressed:(bg-fg/10 border-fg/20 hover:enabled:(bg-fg/20 text-fg/50))':
@@ -48,11 +51,7 @@ defineExpose({
     "
     :aria-keyshortcuts="ariaKeyshortcuts"
   >
-    <span
-      v-if="classicon"
-      :class="[size === 'small' ? 'size-3' : 'size-4', classicon]"
-      aria-hidden="true"
-    />
+    <span v-if="classicon" class="size-[1em]" :class="classicon" aria-hidden="true" />
     <slot />
     <kbd
       v-if="ariaKeyshortcuts"
