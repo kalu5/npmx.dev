@@ -395,19 +395,15 @@ For package links, use the auto-imported `packageRoute()` utility from `app/util
 
 ### Cursor and navigation
 
-We prefer consistency in user everyday experience
+**npmx** uses `cursor: pointer` only for links to match users’ everyday experience. For all other interactive elements, including buttons, use the default cursor (_or another appropriate cursor to indicate state_).
 
-npmx uses `cursor-pointer` only for links. For all other elements, including buttons, use the default cursor (_or other appropriate cursors to show state_).
-
-**What counts as a link**
-
-A link is any element that change or show meaningful content:
-
-- **Not meaningful content:** burger menu, "likes" button - the user does not get substantive information from them.
-- **Meaningful content:** a dialog with a chart, auth button, tabs with new data—they convey new or important information.
+> [!NOTE]
+> A link is any element that leads to another content (_go to another page, authorize_)
+> A button is any element that operates an action (_show tooltip, open menu, "like" package, open dropdown_)
+> If you're unsure which element to use - feel free to ask question in the issue or on discord
 
 > [!IMPORTANT]
-> Always prefer implementing such changes as real links so they can be opened in a new tab, shared or reloaded, and so the same content is available at a stable URL.
+> Always Prefer implementing navigation as real links whenever possible. This ensures they can be opened in a new tab, shared or reloaded, and so the same content is available at a stable URL
 
 ## RTL Support
 
