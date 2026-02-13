@@ -41,6 +41,7 @@ This focus helps guide our project decisions as a community and what we choose t
   - [Naming conventions](#naming-conventions)
   - [Vue components](#vue-components)
   - [Internal linking](#internal-linking)
+  - [Cursor and navigation](#cursor-and-navigation)
 - [RTL Support](#rtl-support)
 - [Localization (i18n)](#localization-i18n)
   - [Approach](#approach)
