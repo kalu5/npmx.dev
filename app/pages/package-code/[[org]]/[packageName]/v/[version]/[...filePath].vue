@@ -427,7 +427,7 @@ defineOgImageComponent('Default', {
                   v-for="mode in markdownViewModes"
                   :key="mode.key"
                   role="tab"
-                  class="px-2 py-1.5 font-mono text-xs rounded transition-colors duration-150 border border-solid focus-visible:outline-accent/70 inline-flex items-center gap-1.5"
+                  class="px-2 py-1.5 font-mono text-xs rounded transition-colors duration-150 border border-solid outline-none focus-visible:(ring-2 ring-accent/90) inline-flex items-center gap-1.5"
                   :class="
                     markdownViewMode === mode.key
                       ? 'bg-bg shadow text-fg border-border'

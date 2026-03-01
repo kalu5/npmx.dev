@@ -689,7 +689,7 @@ const showSkeleton = shallowRef(false)
             <button
               type="button"
               @click="copyPkgName()"
-              class="absolute z-20 inset-is-0 top-full inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-mono whitespace-nowrap transition-all duration-150 opacity-0 -translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:pointer-events-auto"
+              class="absolute z-20 inset-is-0 top-full inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-mono whitespace-nowrap transition-all duration-150 opacity-0 -translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto outline-none focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:pointer-events-auto focus-visible:(ring-2 ring-accent/90)"
               :class="[
                 $style.copyButton,
                 copiedPkgName ? 'text-accent bg-accent/10' : 'text-fg-muted bg-bg border-border',
@@ -755,7 +755,7 @@ const showSkeleton = shallowRef(false)
             <button
               type="button"
               @click="copyVersion()"
-              class="absolute z-20 inset-is-0 top-full inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-mono whitespace-nowrap transition-all duration-150 opacity-0 -translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:pointer-events-auto"
+              class="absolute z-20 inset-is-0 top-full inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-mono whitespace-nowrap transition-all duration-150 opacity-0 -translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto outline-none focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:pointer-events-auto focus-visible:(ring-2 ring-accent/90)"
               :class="[
                 $style.copyButton,
                 copiedVersion ? 'text-accent bg-accent/10' : 'text-fg-muted bg-bg border-border',
@@ -1029,7 +1029,7 @@ const showSkeleton = shallowRef(false)
               <TooltipApp :text="sizeTooltip">
                 <span
                   tabindex="0"
-                  class="inline-flex items-center justify-center min-w-6 min-h-6 -m-1 p-1 text-fg-subtle cursor-help focus-visible:outline-2 focus-visible:outline-accent/70 rounded"
+                  class="inline-flex items-center justify-center min-w-6 min-h-6 -m-1 p-1 text-fg-subtle cursor-help outline-none focus-visible:(ring-2 ring-accent/90) rounded"
                 >
                   <span class="i-lucide:info w-3 h-3" aria-hidden="true" />
                 </span>
@@ -1175,7 +1175,7 @@ const showSkeleton = shallowRef(false)
                     href="https://docs.npmjs.com/generating-provenance-statements"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg focus-visible:decoration-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 transition-colors"
+                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg outline-none focus-visible:(decoration-fg ring-2 ring-accent/90) transition-colors"
                     >{{ $t('package.security_downgrade.provenance_link_text')
                     }}<span class="i-lucide:external-link w-3 h-3" aria-hidden="true"
                   /></a>
@@ -1195,7 +1195,7 @@ const showSkeleton = shallowRef(false)
                     href="https://docs.npmjs.com/trusted-publishers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg focus-visible:decoration-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 transition-colors"
+                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg outline-none focus-visible:(decoration-fg ring-2 ring-accent/90) transition-colors"
                     >{{ $t('package.security_downgrade.trusted_publishing_link_text')
                     }}<span class="i-lucide:external-link w-3 h-3" aria-hidden="true"
                   /></a>
@@ -1215,7 +1215,7 @@ const showSkeleton = shallowRef(false)
                     href="https://docs.npmjs.com/generating-provenance-statements"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg focus-visible:decoration-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 transition-colors"
+                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg outline-none focus-visible:(decoration-fg ring-2 ring-accent/90) transition-colors"
                     >{{ $t('package.security_downgrade.provenance_link_text')
                     }}<span class="i-lucide:external-link w-3 h-3" aria-hidden="true"
                   /></a>
@@ -1225,7 +1225,7 @@ const showSkeleton = shallowRef(false)
                     href="https://docs.npmjs.com/trusted-publishers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg focus-visible:decoration-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 transition-colors"
+                    class="inline-flex items-center gap-1 rounded-sm underline underline-offset-4 decoration-amber-600/60 dark:decoration-amber-400/50 hover:decoration-fg outline-none focus-visible:(decoration-fg ring-2 ring-accent/90) transition-colors"
                     >{{ $t('package.security_downgrade.trusted_publishing_link_text')
                     }}<span class="i-lucide:external-link w-3 h-3" aria-hidden="true"
                   /></a>
@@ -1314,7 +1314,7 @@ const showSkeleton = shallowRef(false)
             :href="repositoryUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="link text-fg underline underline-offset-4 decoration-fg-subtle hover:(decoration-fg text-fg) transition-colors duration-200"
+            class="link text-fg underline underline-offset-4 decoration-fg-subtle hover:(decoration-fg text-fg) transition-colors duration-200 outline-none focus-visible:(decoration-fg ring-2 ring-accent/90)"
             >{{ $t('package.readme.view_on_github') }}</a
           >
         </p>

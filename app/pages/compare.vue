@@ -117,7 +117,7 @@ useSeoMeta({
           </h1>
           <button
             type="button"
-            class="cursor-pointer inline-flex items-center gap-2 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded focus-visible:outline-accent/70 shrink-0"
+            class="cursor-pointer inline-flex items-center gap-2 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded outline-none focus-visible:(ring-2 ring-accent/90) shrink-0"
             @click="router.back()"
             v-if="canGoBack"
           >

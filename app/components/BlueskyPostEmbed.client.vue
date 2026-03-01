@@ -63,7 +63,7 @@ const { data: post, status } = useAsyncData(
     :href="postUrl ?? '#'"
     target="_blank"
     rel="noopener noreferrer"
-    class="block rounded-lg border border-border bg-bg-subtle p-4 sm:p-5 no-underline hover:border-border-hover transition-colors duration-200"
+    class="block rounded-lg border border-border bg-bg-subtle p-4 sm:p-5 no-underline hover:border-border-hover transition-colors duration-200 outline-none focus-visible:(ring-2 ring-accent/90)"
   >
     <!-- Author row -->
     <div class="flex items-center gap-3 mb-3">

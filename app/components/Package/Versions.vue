@@ -549,7 +549,7 @@ function majorGroupContainsCurrent(group: (typeof otherMajorGroups.value)[0]): b
           <button
             v-if="getTagVersions(row.tag).length > 1 || !hasLoadedAll"
             type="button"
-            class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors rounded-sm"
+            class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors rounded-sm outline-none focus-visible:(ring-2 ring-accent/90)"
             :aria-expanded="expandedTags.has(row.tag)"
             :aria-label="
               expandedTags.has(row.tag)
@@ -703,7 +703,7 @@ function majorGroupContainsCurrent(group: (typeof otherMajorGroups.value)[0]): b
       <div class="p-1">
         <button
           type="button"
-          class="flex items-center gap-2 text-start rounded-sm w-full"
+          class="flex items-center gap-2 text-start rounded-sm w-full outline-none focus-visible:(ring-2 ring-accent/90)"
           :class="otherVersionsContainsCurrent() ? 'bg-bg-subtle' : ''"
           :aria-expanded="otherVersionsExpanded"
           :aria-label="
@@ -811,7 +811,7 @@ function majorGroupContainsCurrent(group: (typeof otherMajorGroups.value)[0]): b
                   <div class="flex items-center gap-2 min-w-0">
                     <button
                       type="button"
-                      class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors shrink-0 rounded-sm"
+                      class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors shrink-0 rounded-sm outline-none focus-visible:(ring-2 ring-accent/90)"
                       :aria-expanded="expandedMajorGroups.has(group.groupKey)"
                       :aria-label="
                         expandedMajorGroups.has(group.groupKey)

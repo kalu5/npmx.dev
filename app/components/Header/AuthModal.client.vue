@@ -98,7 +98,7 @@ watch(handleInput, newHandleInput => {
 
         <details class="text-sm">
           <summary
-            class="text-fg-subtle hover:text-fg-muted transition-colors duration-200 focus-visible:(outline-2 outline-accent/70)"
+            class="text-fg-subtle hover:text-fg-muted transition-colors duration-200 outline-none focus-visible:(ring-2 ring-accent/90)"
           >
             {{ $t('auth.modal.what_is_atmosphere') }}
           </summary>

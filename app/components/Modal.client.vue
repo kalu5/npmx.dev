@@ -43,7 +43,7 @@ defineExpose({
     <dialog
       ref="dialogRef"
       closedby="any"
-      class="w-[calc(100%-2rem)] bg-bg border border-border rounded-lg shadow-xl max-h-[90vh] overflow-y-auto overscroll-contain m-0 m-auto p-6 text-fg focus-visible:outline focus-visible:outline-accent/70"
+      class="w-[calc(100%-2rem)] bg-bg border border-border rounded-lg shadow-xl max-h-[90vh] overflow-y-auto overscroll-contain m-0 m-auto p-6 text-fg outline-none focus-visible:(ring-2 ring-accent/90)"
       :aria-labelledby="modalTitleId"
       v-bind="$attrs"
       @transitionend="onDialogTransitionEnd"

@@ -342,14 +342,13 @@ const endDate = computed(() => {
             <button
               type="button"
               :class="[
-                'px-4 py-1.75 font-mono text-sm transition-colors rounded-s-md',
+                'px-4 py-1.75 font-mono text-sm transition-colors rounded-s-md outline-none focus-visible:(ring-2 ring-accent/90)',
                 groupingMode === 'major'
-                  ? 'bg-accent text-bg font-medium'
+                  ? 'bg-accent text-bg font-medium focus-visible:(bg-accent/40!)'
                   : 'text-fg-subtle hover:text-fg hover:bg-bg-subtle/50',
               ]"
               :aria-pressed="groupingMode === 'major'"
               :disabled="pending"
-              tabindex="-1"
               @click="groupingMode = 'major'"
             >
               {{ $t('package.versions.grouping_major') }}
@@ -357,14 +356,13 @@ const endDate = computed(() => {
             <button
               type="button"
               :class="[
-                'px-4 py-1.75 font-mono text-sm transition-colors rounded-e-md border-is border-border',
+                'px-4 py-1.75 font-mono text-sm transition-colors rounded-e-md border-is border-border outline-none focus-visible:(ring-2 ring-accent/90)',
                 groupingMode === 'minor'
-                  ? 'bg-accent text-bg font-medium'
+                  ? 'bg-accent text-bg font-medium focus-visible:(bg-accent/40!)'
                   : 'text-fg-subtle hover:text-fg hover:bg-bg-subtle/50',
               ]"
               :aria-pressed="groupingMode === 'minor'"
               :disabled="pending"
-              tabindex="-1"
               @click="groupingMode = 'minor'"
             >
               {{ $t('package.versions.grouping_minor') }}
@@ -528,7 +526,7 @@ const endDate = computed(() => {
               <button
                 type="button"
                 aria-label="reset minimap"
-                class="absolute inset-is-1/2 -translate-x-1/2 -bottom-18 sm:inset-is-unset sm:translate-x-0 sm:bottom-auto sm:-inset-ie-20 sm:-top-3 flex items-center justify-center px-2.5 py-1.75 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border focus-visible:outline-accent/70 sm:mb-0"
+                class="absolute inset-is-1/2 -translate-x-1/2 -bottom-18 sm:inset-is-unset sm:translate-x-0 sm:bottom-auto sm:-inset-ie-20 sm:-top-3 flex items-center justify-center px-2.5 py-1.75 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border outline-none focus-visible:(ring-2 ring-accent/90) sm:mb-0"
                 style="pointer-events: all !important"
                 @click="resetMinimap"
               >

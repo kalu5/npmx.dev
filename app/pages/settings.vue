@@ -51,7 +51,7 @@ const setLocale: typeof setNuxti18nLocale = locale => {
           </h1>
           <button
             type="button"
-            class="cursor-pointer inline-flex items-center gap-2 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded focus-visible:outline-accent/70 shrink-0 p-1.5 -mx-1.5"
+            class="cursor-pointer inline-flex items-center gap-2 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded outline-none focus-visible:(ring-2 ring-accent/90) shrink-0 p-1.5 -mx-1.5"
             @click="router.back()"
             v-if="canGoBack"
           >
@@ -252,7 +252,7 @@ const setLocale: typeof setNuxti18nLocale = locale => {
                 href="https://github.com/npmx-dev/npmx.dev/tree/main/i18n/locales"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 focus-visible:outline-accent/70 rounded"
+                class="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 outline-none focus-visible:(ring-2 ring-accent/90) rounded"
               >
                 <span class="i-simple-icons:github w-4 h-4" aria-hidden="true" />
                 {{ $t('settings.help_translate') }}

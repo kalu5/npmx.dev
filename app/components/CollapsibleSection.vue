@@ -86,7 +86,7 @@ useHead({
         <button
           :id="buttonId"
           type="button"
-          class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg-muted transition-colors duration-200 shrink-0 focus-visible:outline-accent/70 rounded"
+          class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg-muted transition-colors duration-200 shrink-0 outline-none focus-visible:(ring-2 ring-accent/90) rounded"
           :aria-expanded="isOpen"
           :aria-controls="contentId"
           :aria-label="ariaLabel"
