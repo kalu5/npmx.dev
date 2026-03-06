@@ -1764,7 +1764,7 @@ watch(selectedMetric, value => {
           v-if="showResetButton"
           type="button"
           aria-label="Reset date range"
-          class="self-end flex items-center justify-center px-2.5 py-2.25 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border focus-ring-accent sm:mb-0"
+          class="self-end flex items-center justify-center px-2.5 py-2.25 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border ring-focus-visible sm:mb-0"
           @click="resetDateRange"
         >
           <span class="block i-lucide:undo-2 w-5 h-5" aria-hidden="true" />
@@ -1775,7 +1775,7 @@ watch(selectedMetric, value => {
       <div v-if="isDownloadsMetric" class="flex flex-col gap-2">
         <button
           type="button"
-          class="self-start flex items-center gap-1 text-2xs font-mono text-fg-subtle hover:text-fg transition-colors"
+          class="self-start flex items-center gap-1 text-2xs font-mono text-fg-subtle hover:text-fg transition-colors ring-focus-visible"
           @click="showCorrectionControls = !showCorrectionControls"
         >
           <span
@@ -1797,7 +1797,7 @@ watch(selectedMetric, value => {
               min="0"
               max="20"
               step="1"
-              class="accent-[var(--accent-color,var(--fg-subtle))]"
+              class="accent-[var(--accent-color,var(--fg-subtle))] ring-focus-visible"
             />
           </label>
           <label class="flex flex-col gap-1 flex-1">
@@ -1811,7 +1811,7 @@ watch(selectedMetric, value => {
               min="0"
               max="20"
               step="1"
-              class="accent-[var(--accent-color,var(--fg-subtle))]"
+              class="accent-[var(--accent-color,var(--fg-subtle))] ring-focus-visible"
             />
           </label>
           <div class="flex flex-col gap-1 shrink-0">
@@ -1822,7 +1822,7 @@ watch(selectedMetric, value => {
               <TooltipApp interactive :to="inModal ? '#chart-modal' : undefined">
                 <button
                   type="button"
-                  class="i-lucide:info w-3.5 h-3.5 text-fg-muted cursor-help"
+                  class="i-lucide:info w-3.5 h-3.5 text-fg-muted cursor-help card-focus-visible focus-visible:(p-2)"
                   :aria-label="$t('package.trends.known_anomalies')"
                 />
                 <template #content>
@@ -1874,7 +1874,7 @@ watch(selectedMetric, value => {
                 v-model="settings.chartFilter.anomaliesFixed"
                 type="checkbox"
                 :disabled="!hasAnomalies"
-                class="accent-[var(--accent-color,var(--fg-subtle))]"
+                class="accent-[var(--accent-color,var(--fg-subtle))] ring-focus-visible"
               />
               {{ $t('package.trends.apply_correction') }}
             </label>
@@ -2015,7 +2015,7 @@ watch(selectedMetric, value => {
               <button
                 type="button"
                 aria-label="reset minimap"
-                class="absolute inset-is-1/2 -translate-x-1/2 -bottom-18 sm:inset-is-unset sm:translate-x-0 sm:bottom-auto sm:-inset-ie-20 sm:-top-3 flex items-center justify-center px-2.5 py-1.75 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border focus-ring-accent sm:mb-0"
+                class="absolute inset-is-1/2 -translate-x-1/2 -bottom-18 sm:inset-is-unset sm:translate-x-0 sm:bottom-auto sm:-inset-ie-20 sm:-top-3 flex items-center justify-center px-2.5 py-1.75 border border-transparent rounded-md text-fg-subtle hover:text-fg transition-colors hover:border-border ring-focus-visible sm:mb-0"
                 style="pointer-events: all !important"
                 @click="resetMinimap"
               >

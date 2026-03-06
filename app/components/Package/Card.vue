@@ -48,7 +48,7 @@ const numberFormatter = useNumberFormatter()
         <NuxtLink
           :to="packageRoute(result.package.name)"
           :prefetch-on="prefetch ? 'visibility' : 'interaction'"
-          class="decoration-none scroll-mt-48 scroll-mb-6 after:content-[''] after:absolute after:inset-0"
+          class="decoration-none scroll-mt-48 scroll-mb-6 after:content-[''] after:absolute after:inset-0 outline-none focus:text-accent"
           :data-result-index="index"
           dir="ltr"
           >{{ result.package.name }}</NuxtLink

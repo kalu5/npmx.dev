@@ -53,7 +53,7 @@ useHead({
 
       <button
         type="button"
-        class="font-mono text-sm px-6 py-3 bg-fg text-bg rounded-lg transition-all duration-200 hover:bg-fg/90 active:scale-95 focus-ring-accent"
+        class="font-mono text-sm px-6 py-3 bg-fg text-bg rounded-lg transition-all duration-200 hover:bg-fg/90 active:scale-95 ring-focus-visible"
         @click="handleError"
       >
         {{ $t('common.go_back_home') }}

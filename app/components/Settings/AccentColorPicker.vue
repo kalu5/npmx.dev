@@ -27,13 +27,13 @@ onPrehydrate(el => {
 
 <template>
   <fieldset
-    class="flex items-center gap-4 outline-none has-[input:focus-visible]:(ring-2 ring-accent/90) rounded-xl w-fit"
+    class="flex items-center gap-4 has-[input:focus-visible]:(outline-2 outline-offset-4 outline-accent) rounded-xl w-fit"
   >
     <legend class="sr-only">{{ $t('settings.accent_colors') }}</legend>
     <label
       v-for="color in accentColors"
       :key="color.id"
-      class="size-6 rounded-full transition-transform duration-150 motion-safe:hover:scale-110 outline-none has-[:checked]:(ring-2 ring-accent/90) has-[:focus-visible]:(ring-2 ring-accent/90)"
+      class="size-6 rounded-full transition-transform duration-150 motion-safe:hover:scale-110 has-[:checked]:(outline-2 outline-fg outline-offset-2) has-[:focus-visible]:(outline-2 outline-fg outline-offset-2)"
       :class="color.id === 'neutral' ? 'flex items-center justify-center bg-fg' : ''"
       :style="{ backgroundColor: `var(--swatch-${color.id})` }"
     >

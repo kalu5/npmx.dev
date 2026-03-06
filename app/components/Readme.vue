@@ -141,7 +141,11 @@ function handleClick(event: MouseEvent) {
   @apply decoration-accent text-accent;
 }
 .readme :deep(a:focus-visible) {
-  @apply outline-none decoration-accent text-accent ring-2 ring-accent/90;
+  @apply ring-focus-visible;
+}
+
+.readme :deep(a[target='_blank']:has(img):focus-visible) {
+  margin-top: 2px;
 }
 
 .readme :deep(a[target='_blank']:not(:has(img))::after) {
@@ -212,7 +216,7 @@ function handleClick(event: MouseEvent) {
 .readme :deep(.readme-code-block:hover .readme-copy-button),
 .readme :deep(.readme-copy-button:focus-visible) {
   opacity: 1;
-  @apply outline-none ring-2 ring-accent/90;
+  @apply ring-focus-visible;
 }
 
 .readme :deep(.readme-copy-button:hover) {

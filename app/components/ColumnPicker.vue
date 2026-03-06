@@ -109,7 +109,7 @@ function handleReset() {
                 :checked="column.visible"
                 :disabled="column.disabled"
                 :aria-describedby="column.disabled ? `${column.id}-disabled-reason` : undefined"
-                class="w-4 h-4 accent-fg bg-bg-muted border-border rounded disabled:opacity-50"
+                class="w-4 h-4 accent-fg bg-bg-muted border-border rounded disabled:opacity-50 outline-focus-visible"
                 @change="!column.disabled && emit('toggle', column.id)"
               />
               <span class="text-sm text-fg-muted font-mono flex-1">

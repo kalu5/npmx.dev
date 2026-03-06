@@ -327,7 +327,7 @@ defineOgImageComponent('Default', {
         <div class="flex items-center gap-2 mb-3 flex-wrap min-w-0">
           <NuxtLink
             :to="packageRoute(packageName, version)"
-            class="font-mono text-lg font-medium hover:text-fg transition-colors min-w-0 truncate max-w-[60vw] sm:max-w-none"
+            class="font-mono text-lg font-medium hover:text-fg transition-colors min-w-0 truncate max-w-[60vw] sm:max-w-none outline-focus-visible"
             :title="packageName"
           >
             <span v-if="orgName" class="text-fg-muted">@{{ orgName }}/</span
@@ -364,7 +364,7 @@ defineOgImageComponent('Default', {
           <NuxtLink
             v-if="filePath"
             :to="getCurrentCodeUrlWithPath()"
-            class="text-fg-muted hover:text-fg transition-colors shrink-0"
+            class="text-fg-muted hover:text-fg transition-colors shrink-0 inset-focus-visible"
           >
             {{ $t('code.root') }}
           </NuxtLink>
@@ -374,7 +374,7 @@ defineOgImageComponent('Default', {
             <NuxtLink
               v-if="i < breadcrumbs.length - 1"
               :to="getCurrentCodeUrlWithPath(crumb.path)"
-              class="text-fg-muted hover:text-fg transition-colors"
+              class="text-fg-muted hover:text-fg transition-colors inset-focus-visible"
             >
               {{ crumb.name }}
             </NuxtLink>
@@ -441,7 +441,7 @@ defineOgImageComponent('Default', {
                   v-for="mode in markdownViewModes"
                   :key="mode.key"
                   role="tab"
-                  class="px-2 py-1.5 font-mono text-xs rounded transition-colors duration-150 border border-solid focus-ring-accent inline-flex items-center gap-1.5"
+                  class="px-2 py-1.5 font-mono text-xs rounded transition-colors duration-150 border border-solid ring-focus-visible inline-flex items-center gap-1.5"
                   :class="
                     markdownViewMode === mode.key
                       ? 'bg-bg shadow text-fg border-border'
@@ -465,7 +465,7 @@ defineOgImageComponent('Default', {
             <div class="flex items-center gap-2">
               <button
                 type="button"
-                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors items-center inline-flex gap-1"
+                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors items-center inline-flex gap-1 ring-focus-visible"
                 @click="scrollToTop"
               >
                 <span class="i-lucide:arrow-up w-3 h-3" />
@@ -474,7 +474,7 @@ defineOgImageComponent('Default', {
               <button
                 v-if="selectedLines"
                 type="button"
-                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors active:scale-95"
+                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors active:scale-95 ring-focus-visible"
                 @click="copyPermalinkUrl"
               >
                 {{ permalinkCopied ? $t('common.copied') : $t('code.copy_link') }}
@@ -482,7 +482,7 @@ defineOgImageComponent('Default', {
               <button
                 v-if="!!fileContent?.content"
                 type="button"
-                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors inline-flex items-center gap-1 capitalize"
+                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors inline-flex items-center gap-1 capitalize ring-focus-visible"
                 @click="copyFileContent()"
               >
                 <span
@@ -495,7 +495,7 @@ defineOgImageComponent('Default', {
                 :href="`https://cdn.jsdelivr.net/npm/${packageName}@${version}/${filePath}`"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors inline-flex items-center gap-1"
+                class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors inline-flex items-center gap-1 outline-focus-visible"
               >
                 {{ $t('code.raw') }}
                 <span class="i-lucide:external-link w-3 h-3" />

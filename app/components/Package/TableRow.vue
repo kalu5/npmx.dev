@@ -44,7 +44,7 @@ const allMaintainersText = computed(() => {
 
 <template>
   <tr
-    class="group relative scale-100 [clip-path:inset(0)] border-b border-border hover:bg-bg-muted transition-colors duration-200 outline-none focus-visible:(inset-ring-2 inset-ring-accent/90) focus:bg-bg-muted"
+    class="group relative scale-100 [clip-path:inset(0)] border-b border-border hover:bg-bg-muted transition-colors duration-200 outline-none focus-within:(bg-fg/10)"
     tabindex="0"
     :data-result-index="index"
   >
@@ -52,7 +52,7 @@ const allMaintainersText = computed(() => {
     <td class="py-2 px-3">
       <NuxtLink
         :to="packageUrl"
-        class="row-link font-mono text-sm text-fg hover:text-accent-fallback transition-colors duration-200"
+        class="row-link font-mono text-sm text-fg hover:text-accent-fallback transition-colors duration-200 ring-focus-visible"
         dir="ltr"
       >
         {{ pkg.name }}
@@ -111,7 +111,7 @@ const allMaintainersText = computed(() => {
               name: '~username',
               params: { username: maintainer.username || maintainer.name || '' },
             }"
-            class="relative z-10 hover:text-accent-fallback transition-colors duration-200"
+            class="relative z-10 hover:text-accent-fallback transition-colors duration-200 ring-focus-visible"
             @click.stop
             >{{ maintainer.username || maintainer.name || maintainer.email }}</NuxtLink
           ><span v-if="idx < Math.min(pkg.maintainers.length, 3) - 1">, </span>
@@ -198,19 +198,3 @@ const allMaintainersText = computed(() => {
     </td>
   </tr>
 </template>
-
-<style scoped>
-.row-link {
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    cursor: pointer;
-  }
-
-  &:focus-visible::after {
-    outline: 2px solid var(--color-fg);
-    outline-offset: -2px;
-  }
-}
-</style>

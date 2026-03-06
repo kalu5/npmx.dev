@@ -119,7 +119,7 @@ defineOgImageComponent('Default', {
             required
             name="displayName"
             type="text"
-            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle focus-ring-accent"
+            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle ring-focus-visible"
             v-model="displayNameInput"
           />
         </label>
@@ -130,7 +130,7 @@ defineOgImageComponent('Default', {
             type="text"
             :placeholder="$t('profile.no_description')"
             v-model="descriptionInput"
-            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle focus-ring-accent"
+            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle ring-focus-visible"
           />
         </label>
         <label for="website" class="text-sm flex flex-col gap-2">
@@ -140,7 +140,7 @@ defineOgImageComponent('Default', {
             type="url"
             :placeholder="$t('profile.website_placeholder')"
             v-model="websiteInput"
-            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle focus-ring-accent"
+            class="w-full min-w-25 bg-bg-subtle border border-border rounded-md ps-3 pe-3 py-1.5 font-mono text-sm text-fg placeholder:text-fg-subtle transition-[border-color,outline-color] duration-300 hover:border-fg-subtle ring-focus-visible"
           />
         </label>
         <div class="flex gap-4 items-center font-mono text-sm">

@@ -138,7 +138,7 @@ const showEmptyState = computed(() => docsData.value?.status !== 'ok')
             <NuxtLink
               v-if="packageName"
               :to="packageRoute(packageName)"
-              class="font-mono text-lg sm:text-xl font-semibold text-fg hover:text-fg-muted transition-colors truncate"
+              class="font-mono text-lg sm:text-xl font-semibold text-fg hover:text-fg-muted transition-colors truncate ring-focus-visible"
             >
               {{ packageName }}
             </NuxtLink>
@@ -248,6 +248,12 @@ const showEmptyState = computed(() => docsData.value?.status !== 'ok')
 
 .toc-content > ul > li > ul a {
   @apply text-xs text-fg-subtle hover:text-fg block py-0.5 truncate;
+}
+
+.toc-content a,
+.docs-content a,
+.docs-content pre {
+  @apply ring-focus-visible;
 }
 
 /* Main docs content container - no max-width to use full space */

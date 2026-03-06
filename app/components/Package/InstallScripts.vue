@@ -93,7 +93,7 @@ const isExpanded = shallowRef(false)
     <div v-if="hasNpxDeps" class="mt-3">
       <button
         type="button"
-        class="flex items-center gap-1.5 text-xs text-fg-muted hover:text-fg transition-colors duration-200 focus-ring-accent rounded"
+        class="flex items-center gap-1.5 text-xs text-fg-muted hover:text-fg transition-colors duration-200 ring-focus-visible rounded"
         :aria-expanded="isExpanded"
         aria-controls="npx-packages-details"
         @click="isExpanded = !isExpanded"
@@ -134,7 +134,7 @@ const isExpanded = shallowRef(false)
                 outdatedNpxDeps[dep] &&
                 outdatedNpxDeps[dep].resolved !== outdatedNpxDeps[dep].latest
               "
-              class="shrink-0 p-2 -m-2"
+              class="shrink-0 p-2 -m-2 card-focus-visible focus-visible:(mr-[2px])"
               :class="getVersionClass(outdatedNpxDeps[dep])"
               aria-hidden="true"
               :text="getOutdatedTooltip(outdatedNpxDeps[dep], $t)"

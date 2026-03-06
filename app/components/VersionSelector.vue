@@ -472,7 +472,7 @@ watch(
       type="button"
       aria-haspopup="listbox"
       :aria-expanded="isOpen"
-      class="flex items-center gap-1.5 text-fg-subtle font-mono text-sm hover:text-fg transition-[color] focus-ring-accent focus-visible:ring-offset-bg rounded"
+      class="flex items-center gap-1.5 text-fg-subtle font-mono text-sm hover:text-fg transition-[color] ring-focus-visible rounded"
       @click="isOpen = !isOpen"
       @keydown="handleButtonKeydown"
     >
@@ -533,7 +533,7 @@ watch(
             <button
               v-if="group.versions.length > 1 || !hasLoadedAll"
               type="button"
-              class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors shrink-0"
+              class="w-4 h-4 flex items-center justify-center text-fg-subtle hover:text-fg transition-colors shrink-0 ring-focus-visible"
               :aria-expanded="group.isExpanded"
               :aria-label="group.isExpanded ? 'Collapse' : 'Expand'"
               @click.stop="toggleGroup(group.id)"
@@ -555,7 +555,7 @@ watch(
             <!-- Version link -->
             <NuxtLink
               :to="getVersionUrl(group.primaryVersion.version)"
-              class="flex-1 truncate hover:text-fg transition-colors"
+              class="flex-1 truncate hover:text-fg transition-colors ring-focus-visible"
               @click="isOpen = false"
             >
               <span dir="ltr">
@@ -623,7 +623,7 @@ watch(
         <div class="border-t border-border mt-1 pt-1 px-3 py-2">
           <NuxtLink
             :to="packageRoute(packageName)"
-            class="text-xs text-fg-subtle hover:text-fg transition-[color] focus-visible:outline-none focus-visible:text-fg"
+            class="text-xs text-fg-subtle hover:text-fg transition-[color] outline-focus-visible focus-visible:text-fg"
             @click="isOpen = false"
           >
             {{

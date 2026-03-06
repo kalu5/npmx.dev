@@ -62,7 +62,7 @@ function getWarningTooltip(skill: SkillListItem): string | undefined {
           :aria-selected="selectedMethod === 'skills-npm'"
           :tabindex="selectedMethod === 'skills-npm' ? 0 : -1"
           type="button"
-          class="px-2 py-1 font-mono text-xs rounded transition-colors duration-150 border border-solid focus-ring-accent"
+          class="px-2 py-1 font-mono text-xs rounded transition-colors duration-150 border border-solid ring-focus-visible"
           :class="
             selectedMethod === 'skills-npm'
               ? 'bg-bg border-border shadow-sm text-fg'
@@ -77,7 +77,7 @@ function getWarningTooltip(skill: SkillListItem): string | undefined {
           :aria-selected="selectedMethod === 'skills-cli'"
           :tabindex="selectedMethod === 'skills-cli' ? 0 : -1"
           type="button"
-          class="px-2 py-1 font-mono text-xs rounded transition-colors duration-150 border border-solid focus-ring-accent"
+          class="px-2 py-1 font-mono text-xs rounded transition-colors duration-150 border border-solid ring-focus-visible"
           :class="
             selectedMethod === 'skills-cli'
               ? 'bg-bg border-border shadow-sm text-fg'
@@ -133,7 +133,7 @@ function getWarningTooltip(skill: SkillListItem): string | undefined {
           </code>
           <button
             type="button"
-            class="absolute top-0 inset-ie-0 px-2 py-0.5 font-mono text-xs text-fg-muted bg-bg-subtle/80 border border-border rounded transition-colors duration-200 opacity-0 group-hover/cmd:opacity-100 hover:(text-fg border-border-hover) active:scale-95 focus-visible:opacity-100 focus-ring-accent"
+            class="absolute top-0 inset-ie-0 px-2 py-0.5 font-mono text-xs text-fg-muted bg-bg-subtle/80 border border-border rounded transition-colors duration-200 opacity-0 group-hover/cmd:opacity-100 hover:(text-fg border-border-hover) active:scale-95 focus-visible:opacity-100 ring-focus-visible"
             :aria-label="$t('package.get_started.copy_command')"
             @click.stop="copyCommand"
           >
@@ -154,7 +154,7 @@ function getWarningTooltip(skill: SkillListItem): string | undefined {
       <li v-for="skill in skills" :key="skill.dirName">
         <button
           type="button"
-          class="w-full flex items-center gap-2 py-1.5 text-start rounded transition-colors hover:bg-bg-subtle focus-ring-accent"
+          class="w-full flex items-center gap-2 py-1.5 text-start rounded transition-colors hover:bg-bg-subtle ring-focus-visible"
           :aria-expanded="expandedSkills.has(skill.dirName)"
           @click="toggleSkill(skill.dirName)"
         >
@@ -166,7 +166,7 @@ function getWarningTooltip(skill: SkillListItem): string | undefined {
           <span class="font-mono text-sm text-fg-muted">{{ skill.name }}</span>
           <TooltipApp
             v-if="skill.warnings?.length"
-            class="shrink-0 p-2 -m-2"
+            class="shrink-0 p-2 -m-2 card-focus-visible focus-visible:(mr-[2px])"
             aria-hidden="true"
             :text="getWarningTooltip(skill)"
             to="#skills-modal"

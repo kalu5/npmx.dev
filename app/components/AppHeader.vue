@@ -213,7 +213,7 @@ onKeyStroke(
         v-if="!isSearchExpanded && !isOnHomePage"
         to="/"
         :aria-label="$t('header.home')"
-        class="sm:hidden flex-shrink-0 font-mono text-lg font-medium text-fg hover:text-fg transition-colors duration-200 focus-ring"
+        class="sm:hidden flex-shrink-0 font-mono text-lg font-medium text-fg hover:text-fg transition-colors duration-200 ring-focus-visible"
       >
         <AppLogo class="w-8 h-8 rounded-lg" />
       </NuxtLink>

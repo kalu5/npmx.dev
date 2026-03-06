@@ -126,7 +126,7 @@ const numberFormatter = useNumberFormatter()
             >
               <button
                 type="button"
-                class="p-2 -m-2"
+                class="p-2 -m-2 card-focus-visible focus-visible:(mr-[2px])"
                 :aria-label="getOutdatedTooltip(outdatedDeps[dep], $t)"
               >
                 <span class="i-lucide:circle-alert w-3 h-3" aria-hidden="true" />
@@ -139,7 +139,7 @@ const numberFormatter = useNumberFormatter()
             >
               <button
                 type="button"
-                class="p-2 -m-2"
+                class="p-2 -m-2 card-focus-visible focus-visible:(mr-[2px])"
                 :aria-label="$t('package.dependencies.has_replacement')"
               >
                 <span class="i-lucide:lightbulb w-3 h-3" aria-hidden="true" />
@@ -184,7 +184,7 @@ const numberFormatter = useNumberFormatter()
       <button
         v-if="sortedDependencies.length > 10 && !depsExpanded"
         type="button"
-        class="my-2 ms-1 font-mono text-xs text-fg-muted hover:text-fg transition-colors duration-200 rounded focus-ring-accent"
+        class="my-2 ms-1 font-mono text-xs text-fg-muted hover:text-fg transition-colors duration-200 rounded ring-focus-visible"
         @click="depsExpanded = true"
       >
         {{
@@ -239,7 +239,7 @@ const numberFormatter = useNumberFormatter()
       <button
         v-if="sortedPeerDependencies.length > 10 && !peerDepsExpanded"
         type="button"
-        class="mt-2 font-mono text-xs text-fg-muted hover:text-fg transition-colors duration-200 rounded focus-ring-accent"
+        class="mt-2 font-mono text-xs text-fg-muted hover:text-fg transition-colors duration-200 rounded ring-focus-visible"
         @click="peerDepsExpanded = true"
       >
         {{
@@ -296,7 +296,7 @@ const numberFormatter = useNumberFormatter()
       <button
         v-if="sortedOptionalDependencies.length > 10 && !optionalDepsExpanded"
         type="button"
-        class="mt-2 truncate focus-ring-accent"
+        class="mt-2 truncate ring-focus-visible"
         @click="optionalDepsExpanded = true"
       >
         {{

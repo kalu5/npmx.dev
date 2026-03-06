@@ -59,7 +59,7 @@ const roleLabels = computed(
           </h1>
           <button
             type="button"
-            class="cursor-pointer inline-flex items-center gap-2 p-1.5 -mx-1.5 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded focus-ring-accent shrink-0"
+            class="cursor-pointer inline-flex items-center gap-2 p-1.5 -mx-1.5 font-mono text-sm text-fg-muted hover:text-fg transition-colors duration-200 rounded ring-focus-visible shrink-0"
             @click="router.back()"
             v-if="canGoBack"
           >

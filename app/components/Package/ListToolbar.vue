@@ -179,7 +179,7 @@ function getSortKeyLabelKey(key: SortKey): string {
           <button
             v-if="!searchContext || currentSort.key !== 'relevance'"
             type="button"
-            class="p-1.5 rounded border border-border bg-bg-subtle text-fg-muted hover:text-fg hover:border-border-hover transition-colors duration-200 focus-ring-accent"
+            class="p-1.5 rounded border border-border bg-bg-subtle text-fg-muted hover:text-fg hover:border-border-hover transition-colors duration-200 ring-focus-visible"
             :aria-label="$t('filters.sort.toggle_direction')"
             :title="
               currentSort.direction === 'asc'

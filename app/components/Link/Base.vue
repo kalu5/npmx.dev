@@ -94,15 +94,15 @@ const keyboardShortcutsEnabled = useKeyboardShortcuts()
       'inline-flex': !block,
       'underline-offset-[0.2rem] underline decoration-1 decoration-fg/30':
         !isLinkAnchor && isLink && !noUnderline,
-      'justify-start font-mono text-fg hover:(decoration-accent text-accent) focus-visible:(decoration-accent text-accent) focus-ring-accent transition-colors duration-200':
+      'justify-start font-mono text-fg hover:(decoration-accent text-accent) focus-visible:(decoration-accent text-accent) ring-focus-visible transition-colors duration-200':
         isLink,
       'justify-center font-mono border border-border rounded-md transition-all duration-200':
         isButton,
       'text-sm px-4 py-2': isButtonMedium,
       'text-xs px-2 py-0.5': isButtonSmall,
-      'bg-transparent text-fg hover:(bg-fg/10 text-accent) focus-visible:(bg-fg/10 text-accent) focus-ring-accent aria-[current=true]:(bg-fg/10 text-accent border-fg/20 hover:enabled:(bg-fg/20 text-fg/50))':
+      'bg-transparent text-fg hover:(bg-fg/10 text-accent) focus-visible:(bg-fg/10 border-none! text-accent) ring-focus-visible aria-[current=true]:(bg-fg/10 text-accent border-fg/20 hover:enabled:(bg-fg/20 text-fg/50))':
         variant === 'button-secondary',
-      'text-bg bg-fg hover:(bg-fg/50 text-accent) focus-visible:(bg-fg/50) focus-ring-accent aria-current:(bg-fg text-bg border-fg hover:enabled:(text-bg/50))':
+      'text-bg bg-fg hover:(bg-fg/50 text-accent) focus-visible:(bg-fg/50 border-none!) ring-focus-visible aria-current:(bg-fg text-bg border-fg hover:enabled:(text-bg/50))':
         variant === 'button-primary',
     }"
     :to="to"

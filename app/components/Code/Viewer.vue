@@ -100,7 +100,7 @@ watch(
         :key="lineNum"
         :href="`#L${lineNum}`"
         tabindex="-1"
-        class="line-number block px-3 py-0 font-mono text-sm leading-6 cursor-pointer transition-colors no-underline focus-ring-accent"
+        class="line-number block px-3 py-0 font-mono text-sm leading-6 cursor-pointer transition-colors no-underline ring-focus-visible"
         :class="[
           isLineSelected(lineNum)
             ? 'bg-yellow-500/20 text-fg'
@@ -136,6 +136,7 @@ watch(
   padding: 0;
   background: transparent !important;
   overflow: visible;
+  @apply inset-focus-visible;
 }
 
 .code-content :deep(code) {
@@ -173,6 +174,7 @@ watch(
     text-decoration-color 0.15s,
     text-decoration-style 0.15s;
   cursor: pointer;
+  @apply ring-focus-visible;
 }
 
 .code-content :deep(.import-link:hover) {
